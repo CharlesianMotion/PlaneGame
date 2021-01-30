@@ -5,10 +5,10 @@ import java.io.*;
 import java.util.*;
 
 public class fieldmode implements Serializable {
-    boolean biperson;//双人模式
-    boolean endless;//无尽模式
-    boolean advance;//闯关模式
-    int degree;//难度
+    boolean biperson;//鍙屼汉妯″紡
+    boolean endless;//鏃犲敖妯″紡
+    boolean advance;//闂叧妯″紡
+    int degree;//闅惧害
     int id;
 
     public fieldmode(int id_in, int difficulty) {

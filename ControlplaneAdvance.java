@@ -8,8 +8,8 @@ public class ControlplaneAdvance implements Serializable {
 	int baseDamage;
 	int baseDefense;
 	int speedincrement;
-	int level;//µÈ¼¶
-	int exp;//¾­ÑéÖµ
+	int level;//ç­‰çº§
+	int exp;//ç»éªŒå€¼
 	int tempDefense;
 	boolean over;
 

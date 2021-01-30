@@ -81,10 +81,10 @@ public class Battlefield extends Frame {
     boolean controlflag1[] = new boolean[5];
     boolean locationreflesh = false;
     Airplane Controlplane, Controlplane1;
-    ControlplaneAdvance controller, controller1;//·É»ú¿ØÖÆÏà¹Ø
-    Bullettype nmlBullet, shotBullet, biBullet, blueBullet;//ÆÕÍ¨×Óµ¯ É¢µ¯ Ë«ÁĞ×Óµ¯
+    ControlplaneAdvance controller, controller1;//é£æœºæ§åˆ¶ç›¸å…³
+    Bullettype nmlBullet, shotBullet, biBullet, blueBullet;//æ™®é€šå­å¼¹ æ•£å¼¹ åŒåˆ—å­å¼¹
     Accessorytype lives, boxs, oil, bibox, shotbox, shield, smasher, stoneleft, stoneright,slow_speed;
-    //µÀ¾ßÀàĞÍ:ÉúÃü£¬Ïä×Ó£¬ÓÍ¹Ş£¬Ë«ÅÅ×Óµ¯Ïä£¬É¢µ¯Ïä£¬¶ÜÅÆ£¬¼ÓËÙÆ÷
+    //é“å…·ç±»å‹:ç”Ÿå‘½ï¼Œç®±å­ï¼Œæ²¹ç½ï¼ŒåŒæ’å­å¼¹ç®±ï¼Œæ•£å¼¹ç®±ï¼Œç›¾ç‰Œï¼ŒåŠ é€Ÿå™¨
     ArrayList<Bullet> bulletsList;
     ArrayList<Airplane> planeList;
     ArrayList<Explode> explodeList;
@@ -100,7 +100,7 @@ public class Battlefield extends Frame {
     int delay = 5000;
     float backy = 638;
     //   	boolean fire=false;
-//×Ô¶¯·¢×Óµ¯
+//è‡ªåŠ¨å‘å­å¼¹
     boolean fire = true;
     boolean fire1 = true;
     boolean goon = true;
@@ -167,26 +167,58 @@ public class Battlefield extends Frame {
 
     public static void main(String args[]) {
 
-        JFrame fs = new JFrame("Õ½»úÑ¡Ôñ");
+        JFrame fs = new JFrame("æˆ˜æœºé€‰æ‹©");
         fs.setSize(1000, 900);
         //fs.setLocation(580, 240);
         fs.setLayout(null);
-        String mesg = "ÇëÊäÈëÄÑ¶ÈÏµÊı:\n1 ¼òµ¥\n2 ÆÕÍ¨\n3 À§ÄÑ\n4 µØÓü";
+        String mesg = "è¯·è¾“å…¥éš¾åº¦ç³»æ•°:\n1 ç®€å•\n2 æ™®é€š\n3 å›°éš¾\n4 åœ°ç‹±";
         int difficult_level = Integer.parseInt(JOptionPane.showInputDialog(fs, mesg));
-        JButton b1 = new JButton("»ÃÓ°2000");
+        JButton b1 = new JButton("å¹»å½±2000");
         b1.setBounds(250, 100, 150, 50);
-        JButton b2 = new JButton("Ã×¸ñ31");
+        JLabel l1 = new JLabel(new ImageIcon("Airplanes/airplane12.gif"));
+        l1.setBounds(275,200,100,100);
+        JLabel l4 = new JLabel("æ™®é€šå­å¼¹ æ€§èƒ½ä¸€èˆ¬");
+        l4.setBounds(275,300,150,50);
+        JButton b2 = new JButton("ç±³æ ¼31");
         b2.setBounds(450, 100, 150, 50);
+        JLabel l2 = new JLabel(new ImageIcon("Airplanes/airplane3.gif"));
+        l2.setBounds(475,200,100,100);
+        JLabel l5 = new JLabel("åŒæ’å­å¼¹ æ”»é˜²å…¼å¤‡");
+        l5.setBounds(475,300,150,50);
         JButton b3 = new JButton("F-16");
         b3.setBounds(650, 100, 150, 50);
-        // JButton b4 = new JButton("µØÓüÄ£Ê½");
+        JLabel l3 = new JLabel(new ImageIcon("Airplanes/airplane14.gif"));
+        l3.setBounds(675,200,100,100);
+        JLabel l6 = new JLabel("æ•£å°„å­å¼¹ é«˜é€Ÿåº¦é«˜æ”»å‡»");
+        l6.setBounds(660,300,150,50);
+        // JButton b4 = new JButton("åœ°ç‹±æ¨¡å¼");
         // b4.setBounds(700, 100, 150, 50);
-        //JRadioButton b4 = new JRadioButton("xxÄ£Ê½");
+        //JRadioButton b4 = new JRadioButton("xxæ¨¡å¼");
         //b4.setBounds(100, 700, 200, 50);
+        JLabel ll1 = new JLabel(new ImageIcon("accessory/box_goods.png"));
+        JLabel ll2 = new JLabel(new ImageIcon("accessory/damage_goods.png"));
+        JLabel ll3 = new JLabel("è¡¥ç»™é“å…·ï¼šè·å¾—æ­¦å™¨å‡çº§");
+        JLabel ll4 = new JLabel("é™·é˜±ï¼šå†·å†»æ•ˆæœï¼Œé€Ÿåº¦é™ä½3ç§’");
+
+        ll1.setBounds(250,600,100,100);
+        ll2.setBounds(250,700,100,100);
+        ll3.setBounds(400,600,300,100);
+        ll4.setBounds(400,700,300,100);
+
 
         fs.add(b1);
         fs.add(b2);
         fs.add(b3);
+        fs.add(l1);
+        fs.add(l2);
+        fs.add(l3);
+        fs.add(l4);
+        fs.add(l5);
+        fs.add(l6);
+        fs.add(ll1);
+        fs.add(ll2);
+        fs.add(ll3);
+        fs.add(ll4);
         // fs.add(b4);
 
         b1.addActionListener(new ActionListener() {
@@ -281,12 +313,12 @@ public class Battlefield extends Frame {
     public int getRandomIntNum(int a, int b) {
         Random random = new Random();
         int c = random.nextInt();
-//	RandomÀïµÄnextInt()·½·¨£¬Ëæ»ú²úÉúÒ»¸ö int ĞÍµÄÊı£»
+//	Randomé‡Œçš„nextInt()æ–¹æ³•ï¼Œéšæœºäº§ç”Ÿä¸€ä¸ª int å‹çš„æ•°ï¼›
         if (c < 0) {
             c = -c;
         }
         int d = ((c % (b - a)) + a);
-//	ÕâÀïÈÃ±äÁ¿d±ä³ÉaºÍbÖ®ÖĞµÄÊı£¬ % ÊÇÈ¡ÓàÔËËã£»
+//	è¿™é‡Œè®©å˜é‡då˜æˆaå’Œbä¹‹ä¸­çš„æ•°ï¼Œ % æ˜¯å–ä½™è¿ç®—ï¼›
         return d;
 
     }
@@ -329,7 +361,7 @@ public class Battlefield extends Frame {
     }
 
     public void gamebegin() {
-//		³õÊ¼»¯
+//		åˆå§‹åŒ–
         TimerTask task = new TimerTask() {
             @SuppressWarnings("deprecation")
             public void run() {
@@ -379,9 +411,9 @@ public class Battlefield extends Frame {
 
         Controlplane.pX = 500;
         Controlplane.pY = 650;
-        Controlplane.life = mode.id * 100 + 1200/difficulty - 300;
+        Controlplane.life = mode.id * 100 + 1200/difficulty;
         //Controlplane.bulletnum=100;
-        Controlplane.oil = mode.id * 100;
+        Controlplane.oil = mode.id * 100 + 300;
         Controlplane.controller.over = false;
         if (mode.biperson) {
             Controlplane1.pX = 700;
@@ -442,7 +474,7 @@ public class Battlefield extends Frame {
         if (mode.advance && isSleep) {
             drawOffScreen.drawImage(winimage, 450, 300, null);
         } else {
-//¿ØÖÆ
+//æ§åˆ¶
 
             //   	 drawOffScreen.fillRect(0, 0, 1000, 900);
             drawOffScreen.drawImage(backgroud, 0, 0, 1000, 900, 0, (int) backy, 360, 320 + (int) backy, null);
@@ -471,13 +503,13 @@ public class Battlefield extends Frame {
                 if (p.eplane == 2) drawOffScreen.drawImage(Airplane.eplane2, p.pX, p.pY, null);
                 if (p.eplane == 3) drawOffScreen.drawImage(Airplane.eplane3, p.pX, p.pY, null);
 
-                //·¢Éä×Óµ¯
+                //å‘å°„å­å¼¹
                 if ((p.getRandomIntNum(0, 400/difficulty)) == 1) {
                         Bullet b2 = new Bullet(p.pX + p.pWidth / 2 - 3, p.pY + p.pHeight, 13, 13, p.bullettype);
                         b2.speed = -3;
                         bulletsList.add(b2);
                 }
-                //ÅĞ¶ÏÊÇ·ñ±»»÷ÖĞ?
+                //åˆ¤æ–­æ˜¯å¦è¢«å‡»ä¸­?
                 Iterator<Bullet> bnums = bulletsList.iterator();
                 while (bnums.hasNext()) {
                     Bullet b = bnums.next();
@@ -498,14 +530,14 @@ public class Battlefield extends Frame {
                         m2.hitclip.play();
                     }
                     ;
-                    //ÅĞ¶ÏÊÇ·ñ×²»÷¿ØÖÆ·É»ú
+                    //åˆ¤æ–­æ˜¯å¦æ’å‡»æ§åˆ¶é£æœº
                     if (p.hit(Controlplane))
                         m2.explodeclip.play();
                     if (mode.biperson && p.hit(Controlplane1))
                         m2.explodeclip.play();
                 }
 
-                //ÅĞ¶ÏÊÇ·ñ×²»÷¸½¼ş
+                //åˆ¤æ–­æ˜¯å¦æ’å‡»é™„ä»¶
                 Iterator<Accessory> anums = accessoryList.iterator();
                 while (anums.hasNext()) {
                     Accessory a = anums.next();
@@ -524,7 +556,7 @@ public class Battlefield extends Frame {
                 }
                 ;
             }
-//¸½¼ş
+//é™„ä»¶
             if (hasAccessory) {
                 int temp;
                 temp = getRandomIntNum(1, 6);
@@ -598,7 +630,7 @@ public class Battlefield extends Frame {
                     //t2.setText(Controlplane.life+"");
                 }
                 ;
-                //ÅĞ¶ÏÊÇ·ñ±»»÷ÖĞ?
+                //åˆ¤æ–­æ˜¯å¦è¢«å‡»ä¸­?
                 Iterator<Bullet> bnums = bulletsList.iterator();
                 while (bnums.hasNext()) {
                     Bullet b = bnums.next();
@@ -618,7 +650,7 @@ public class Battlefield extends Frame {
                 }
                 ;
             }
-//×Óµ¯
+//å­å¼¹
             if (fire) {
                 if (Controlplane.bullettype == nmlBullet) {
                     bulletsList.add(new Bullet(Controlplane.pX + Controlplane.pWidth / 2 - 3, Controlplane.pY, 13, 13, nmlBullet, controller, 1));
@@ -717,7 +749,7 @@ public class Battlefield extends Frame {
             if (gameover == -1) drawOffScreen.drawImage(gameoverimage, 450, 300, null);
             if (gameover == 1) drawOffScreen.drawImage(winimage, 450, 300, null);
 
-            //ÅĞ¶ÏÊÇ·ñ±»»÷ÖĞ?
+            //åˆ¤æ–­æ˜¯å¦è¢«å‡»ä¸­?
             if ((Controlplane.life < 0) || (Controlplane.oil < 0)) {
                 if (flag1 == false)
                     explodeList.add(new Explode(Controlplane.pX, Controlplane.pY));
@@ -746,7 +778,7 @@ public class Battlefield extends Frame {
                 gameover = -1;
 
             }
-//ÅĞ¶ÏÊÇ·ñÊ¤Àû?
+//åˆ¤æ–­æ˜¯å¦èƒœåˆ©?
             if (planeList.size() == 0) gameover = 0;
 //
             if ((explodeList.size() == 0) && (gameover != 0)) {
@@ -766,7 +798,7 @@ public class Battlefield extends Frame {
                 ;
             }
             //g.drawImage(OffScreen1,0,0,this.p2);
-//¸üĞÂÎ»ÖÃ
+//æ›´æ–°ä½ç½®
             if (Controlplane.controller.over == false && locationreflesh) {
                 if (mode.biperson == false) locationreflesh = false;
                 if (controlflag[0] == true)
@@ -795,11 +827,11 @@ public class Battlefield extends Frame {
 
     public void showcomponent() {
         MenuBar m_MenuBar = new MenuBar();
-        Menu menuFile = new Menu("ÎÄ¼ş");     //´´½¨²Ëµ¥
-        m_MenuBar.add(menuFile);                 //½«²Ëµ¥¼ÓÈë²Ëµ¥Ìõ
-        MenuItem f1 = new MenuItem("´ò¿ª");   //´´½¨¸÷²Ëµ¥Ïî
-        MenuItem f2 = new MenuItem("¹Ø±Õ");
-        menuFile.add(f1);                                       //¼ÓÈë²Ëµ¥
+        Menu menuFile = new Menu("æ–‡ä»¶");     //åˆ›å»ºèœå•
+        m_MenuBar.add(menuFile);                 //å°†èœå•åŠ å…¥èœå•æ¡
+        MenuItem f1 = new MenuItem("æ‰“å¼€");   //åˆ›å»ºå„èœå•é¡¹
+        MenuItem f2 = new MenuItem("å…³é—­");
+        menuFile.add(f1);                                       //åŠ å…¥èœå•
         menuFile.add(f2);
         setMenuBar(m_MenuBar);
         //;
@@ -807,60 +839,60 @@ public class Battlefield extends Frame {
         add(p1, "North");
         p1.setLayout(new GridLayout(1, 10));
         if (mode.biperson) {
-            p1.add(new Label("ÉúÃüÖµ"), 0);
+            p1.add(new Label("ç”Ÿå‘½å€¼"), 0);
             t1 = new TextField(3);
             p1.add(t1, 1);
             t2 = new TextField(3);
             p1.add(t2, 2);
-            p1.add(new Label("ÓÍÁ¿"), 3);
+            p1.add(new Label("æ²¹é‡"), 3);
             t3 = new TextField(3);
             p1.add(t3, 4);
             t4 = new TextField(3);
             p1.add(t4, 5);
-            start = new Button("¿ªÊ¼");
+            start = new Button("å¼€å§‹");
             p1.add(start, 6);
             start.addActionListener(new Startaction());
-            save = new Button("±£´æ");
+            save = new Button("ä¿å­˜");
             p1.add(save, 7);
             save.addActionListener(new Saveaction());
-            load = new Button("¼ÓÔØ");
+            load = new Button("åŠ è½½");
             p1.add(load, 8);
         } else {
             if (mode.endless) {
-                p1.add(new Label("ÉúÃüÖµ"), 0);
+                p1.add(new Label("ç”Ÿå‘½å€¼"), 0);
                 t1 = new TextField(3);
                 p1.add(t1, 1);
-                p1.add(new Label("ÓÍÁ¿"), 2);
+                p1.add(new Label("æ²¹é‡"), 2);
                 t3 = new TextField(3);
                 p1.add(t3, 3);
-                p1.add(new Label("µÈ¼¶"), 4);
+                p1.add(new Label("ç­‰çº§"), 4);
                 t5 = new TextField(3);
                 p1.add(t5, 5);
-                p1.add(new Label("¾­ÑéÖµ"), 6);
+                p1.add(new Label("ç»éªŒå€¼"), 6);
                 t6 = new TextField(3);
                 p1.add(t6, 7);
-                start = new Button("¿ªÊ¼");
+                start = new Button("å¼€å§‹");
                 p1.add(start, 8);
                 start.addActionListener(new Startaction());
-                save = new Button("±£´æ");
+                save = new Button("ä¿å­˜");
                 p1.add(save, 9);
                 save.addActionListener(new Saveaction());
-                load = new Button("¼ÓÔØ");
+                load = new Button("åŠ è½½");
                 p1.add(load, 10);
             } else {
-                p1.add(new Label("ÉúÃüÖµ"), 0);
+                p1.add(new Label("ç”Ÿå‘½å€¼"), 0);
                 t1 = new TextField(3);
                 p1.add(t1, 1);
-                p1.add(new Label("ÓÍÁ¿"), 2);
+                p1.add(new Label("æ²¹é‡"), 2);
                 t3 = new TextField(3);
                 p1.add(t3, 3);
-                start = new Button("¿ªÊ¼");
+                start = new Button("å¼€å§‹");
                 p1.add(start, 4);
                 start.addActionListener(new Startaction());
-                save = new Button("±£´æ");
+                save = new Button("ä¿å­˜");
                 p1.add(save, 5);
                 save.addActionListener(new Saveaction());
-                load = new Button("¼ÓÔØ");
+                load = new Button("åŠ è½½");
                 p1.add(load, 6);
             }
 

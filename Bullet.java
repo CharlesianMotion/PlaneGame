@@ -22,7 +22,7 @@ public class Bullet implements Serializable {
 		  power=bullettype.power;
 		  parent_id=0;
 	}
-	public Bullet(int x,int y,int w,int h,Bullettype btype,int shotid_in){//´´½¨É¢µ¯
+	public Bullet(int x,int y,int w,int h,Bullettype btype,int shotid_in){//åˆ›å»ºæ•£å¼¹
 		super();
 		  bX=x;
 		  bY=y;
@@ -33,7 +33,7 @@ public class Bullet implements Serializable {
 		  power=bullettype.power;
 		  parent_id=0;
 	}
-	public Bullet(int x,int y,int w,int h,Bullettype btype,int shotid_in,ControlplaneAdvance controller,int id){//´´½¨É¢µ¯
+	public Bullet(int x,int y,int w,int h,Bullettype btype,int shotid_in,ControlplaneAdvance controller,int id){//åˆ›å»ºæ•£å¼¹
 		super();
 		  bX=x;
 		  bY=y;

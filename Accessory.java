@@ -13,7 +13,7 @@ public class Accessory implements Serializable {
 	int Xoffset=0;
 	int intervel;
 	int count=0;
-	Accessorytype atype;//µÀ¾ßÀàĞÍ
+	Accessorytype atype;//é“å…·ç±»å‹
 	
 	
 	public Accessory(Accessorytype atype_in){
@@ -51,13 +51,13 @@ public class Accessory implements Serializable {
 	{
 	  Random random = new Random();
 	  int c = random.nextInt();
-//	ÕâÀïÓÃµ½ÁËRandomÀïµÄnextInt()·½·¨£¬Õâ¸ö·½·¨»áËæ»ú²úÉúÒ»¸ö int ĞÍµÄÊı£»
+//	è¿™é‡Œç”¨åˆ°äº†Randomé‡Œçš„nextInt()æ–¹æ³•ï¼Œè¿™ä¸ªæ–¹æ³•ä¼šéšæœºäº§ç”Ÿä¸€ä¸ª int å‹çš„æ•°ï¼›
 	  if(c<0)
 	  {
 	    c = -c ;
 	  }
 	  int d = ((c %(b-a)) + a + 1);
-//	ÕâÀïÊÇÈÃ±äÁ¿d±ä³ÉaºÍbÖ®ÖĞµÄÊı£¬ % ÊÇÈ¡ÓàÔËËã£»
+//	è¿™é‡Œæ˜¯è®©å˜é‡då˜æˆaå’Œbä¹‹ä¸­çš„æ•°ï¼Œ % æ˜¯å–ä½™è¿ç®—ï¼›
 	return d;
 
 	}
