@@ -7,7 +7,6 @@ import java.applet.*;
 import java.util.Timer;
 
 import javax.swing.*;
-import javax.swing.JFrame;
 
 class Flag {
     int f1 = 0, f2 = 0;
@@ -17,14 +16,14 @@ class Flag {
 
     public synchronized void putf1begin() {
         while (f1 == 1) try {
-            wait();
+            wait();//释放当前锁
         } catch (Exception e) {
         }
     }
 
     public synchronized void putf1end() {
         f1 = 1;
-        notifyAll();
+        notifyAll();//唤醒处于等待状态的线程
     }
 
     public synchronized void getf1begin() {
@@ -199,11 +198,36 @@ public class Battlefield extends Frame {
         JLabel ll2 = new JLabel(new ImageIcon("accessory/damage_goods.png"));
         JLabel ll3 = new JLabel("补给道具：获得武器升级");
         JLabel ll4 = new JLabel("陷阱：冷冻效果，速度降低3秒");
+        JLabel ll5 = new JLabel(new ImageIcon("accessory/life_goods.png"));
+        JLabel ll6 = new JLabel("医疗包：增加50生命值");
+        JLabel ll7 = new JLabel(new ImageIcon("accessory/oil.gif"));
+        JLabel ll8 = new JLabel("油桶：增加60油量");
+        JLabel ll10 = new JLabel(new ImageIcon("Airplanes/airplane4-1.gif"));
+        JLabel ll9 = new JLabel(new ImageIcon("accessory/worldwar.jpg"));
+        JLabel ll11 = new JLabel("僚机");
+        String rulestr = "<html>规则：使用方向键控制飞机，空格键发射子弹，注意不要碰撞上其它的飞机。飞机途中可以拾取道具，同时要注意避免负面道具。此外，敌机会偶尔变成僚机进行作战。</html>";
+        JLabel ll12 = new JLabel(rulestr);
+        ll9.setOpaque(false);
+        
 
-        ll1.setBounds(250,600,100,100);
-        ll2.setBounds(250,700,100,100);
-        ll3.setBounds(400,600,300,100);
-        ll4.setBounds(400,700,300,100);
+
+        l4.setForeground(Color.red);
+        l5.setForeground(Color.red);
+        l6.setForeground(Color.red);
+        ll1.setBounds(50,470,100,100);
+        ll2.setBounds(50,540,100,100);
+        ll3.setBounds(150,470,300,100);
+        ll4.setBounds(150,540,300,100);
+        ll5.setBounds(50,400,100,100);
+        ll6.setBounds(150,400,300,100);
+        ll7.setBounds(50,610,100,100);
+        ll8.setBounds(150,610,300,100);
+        ll10.setBounds(50,680,100,100); 
+        ll11.setBounds(150,680,100,100); 
+        ll12.setBounds(680,400,200,200);
+        ll9.setBounds(0,0,1000,880);
+       
+        
 
 
         fs.add(b1);
@@ -219,6 +243,15 @@ public class Battlefield extends Frame {
         fs.add(ll2);
         fs.add(ll3);
         fs.add(ll4);
+        fs.add(ll5);
+        fs.add(ll6);
+        fs.add(ll7);
+        fs.add(ll8);
+        fs.add(ll10);
+        fs.add(ll11);
+        fs.add(ll12);
+        fs.add(ll9);
+        
         // fs.add(b4);
 
         b1.addActionListener(new ActionListener() {

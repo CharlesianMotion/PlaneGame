@@ -9,7 +9,7 @@ public class Accessory implements Serializable {
 	int aWidth,aHeight;
 	int speed=1;
 	int typeint;
-	int life=50;
+	int life=1000;
 	int Xoffset=0;
 	int intervel;
 	int count=0;
@@ -17,7 +17,7 @@ public class Accessory implements Serializable {
 	
 	
 	public Accessory(Accessorytype atype_in){
-		  aX=getRandomIntNum(50,950);
+		  aX=getRandomIntNum(50,950);//50到950之间的随机数
 		  aY=30;
 		  aWidth=32;
 		  aHeight=32;
@@ -51,7 +51,7 @@ public class Accessory implements Serializable {
 	{
 	  Random random = new Random();
 	  int c = random.nextInt();
-//	这里用到了Random里的nextInt()方法，这个方法会随机产生一个 int 型的数；
+//	这里用到了Random里的nextInt()方法，这个方法会随机产生一个int型的数；
 	  if(c<0)
 	  {
 	    c = -c ;
